@@ -1,10 +1,10 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules } from 'react-native';
 
-const LINKING_ERROR =
-  `The package 'react-native-pvk-testbluetooth-library' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+// const LINKING_ERROR =
+//   `The package 'react-native-pvk-testbluetooth-library' doesn't seem to be linked. Make sure: \n\n` +
+//   Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
+//   '- You rebuilt the app after installing the package\n' +
+//   '- You are not using Expo Go\n';
 
 const PvkTestbluetoothLibrary = NativeModules.PvkTestbluetoothLibrary
   ? NativeModules.PvkTestbluetoothLibrary
@@ -12,7 +12,7 @@ const PvkTestbluetoothLibrary = NativeModules.PvkTestbluetoothLibrary
       {},
       {
         get() {
-          throw new Error(LINKING_ERROR);
+          throw new Error();
         },
       }
     );
